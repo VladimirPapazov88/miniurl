@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            document.getElementById("check").checked = false;
+        }
+    </script>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo center">URL Shortener</a>
+        </div>
+    </nav>
+
+    <br>
+    <div class="row center">
+        <form action="/short" method="post" class="col s12">
+            <div class="row center">
+                <div class="input-field col s6 offset-s3">
+                    <input id="url" type="text" name="link" pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?" class="validate">
+                    <label for="url">Long URL</label>
+                    <p>
+                        <label>
+                        <input type="checkbox" id="check" name="iscustom" onclick="if(this.checked){ document.getElementById('custom').disabled = false;} else { document.getElementById('custom').disabled = true; }" checked="False"/>
+                        <span>Customize link</span>
+                        </label>
+                    </p>
+                    <div class="input-field col s6 offset-s3">
+                        <input id="custom" type="text" name="custom" class="validate" disabled>
+                        <label for="custom">Your end of link</label>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" value="short">Short!</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
