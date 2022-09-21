@@ -2,4 +2,4 @@
 
 URL Shortener on Python3
 
-s.silaeder.ru
+http://s.silaeder.ru
